@@ -26,8 +26,7 @@ var getDb = function(host, done) {
       sslAllowInvalidHostnames: config.mongoSSLAllowInvalidHostnames
     };
   }
-    console.log(host);
-    let base = host.toString() + ":"+config.mongoPort;
+    let base = "127.0.0.1:"+config.mongoPort;
     let auth = "mongodb://" +config.username +":"+config.password +"@"+base;
     let open = "mongodb://" + base;
     let result = config.username ? auth : open;
